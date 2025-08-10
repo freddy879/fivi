@@ -6,8 +6,8 @@
   <title>BEBIDAS YA!</title>
 
   <!-- Fuentes y estilos -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -17,67 +17,38 @@
       padding-bottom: 70px;
       background-color: white;
     }
-
     .navbar {
       background-color: #ffffffc0 !important;
       padding: 1.5rem 2rem;
       font-size: 1.1rem;
       box-shadow: 0 4px 6px rgba(19, 18, 18, 0.973);
     }
-
     .navbar .logo {
       font-weight: bold;
       font-size: 1.5rem;
-      color: white;
+      color: black;
     }
-
     .exclamacion {
       color: black !important;
       font-weight: bold;
     }
-
-    .categoria {
-      color: white !important;
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .icono-negro {
-      color: black !important;
-      font-size: 1.3rem;
-      cursor: pointer;
-    }
-
-    /* SIN desplazamiento horizontal */
-    .scroll-horizontal {
-      display: flex;
-      flex-wrap: wrap;
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
       padding: 1rem;
-      justify-content: center;
     }
-
-    .item-horizontal {
-      flex: 0 0 auto;
-      width: 200px;
-    }
-
     .card {
-      width: 200px;
-      flex-shrink: 0;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 10px;
+      overflow: hidden;
     }
-
     .card img {
       width: 100%;
       height: 150px;
       object-fit: cover;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
     }
-
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -90,15 +61,12 @@
       justify-content: space-around;
       align-items: center;
     }
-
     .nav-item {
       position: relative;
       text-align: center;
       font-size: 0.9rem;
       color: #000;
     }
-
-    /* Contador del carrito */
     .contador {
       position: absolute;
       top: -5px;
@@ -110,7 +78,6 @@
       padding: 2px 6px;
       font-weight: bold;
     }
-
     .search-bar {
       max-width: 400px;
       margin: 0 auto 1rem;
@@ -126,95 +93,69 @@
 
   <div class="container mt-4">
 
-    <!-- 🔍 Barra de búsqueda -->
     <div class="search-bar">
-      <input type="text" id="busqueda" class="form-control" placeholder="Buscar bebida...">
+      <input type="text" id="busqueda" class="form-control" placeholder="Buscar bebida..." />
     </div>
-     <h3 class="mb-3 text-success text-center">BEBIDAS</h3>
 
-    <div class="scroll-horizontal" id="contenedor-productos">
+    <h3 class="mb-3 text-success text-center">BEBIDAS</h3>
 
-      <!-- Producto 1 -->
+    <div class="productos-grid" id="contenedor-productos">
+
       <div class="card producto">
-        <img src="club-cerveza-club-twist-off-pack-24-x-330-ml.jpg" class="card-img-top" alt="JAVA DE CLUB VERDE">
+        <a href="g.html" onclick="guardarProducto('Caja', 2, 'club-cerveza-club-twist-off-pack-24-x-330-ml.jpg')">
+          <img src="club-cerveza-club-twist-off-pack-24-x-330-ml.jpg" alt="JAVA DE CLUB VERDE" />
+        </a>
         <div class="card-body text-center">
-          <h6 class="card-title">caja</h6>
+          <h6 class="card-title">Caja</h6>
           <p class="text-success fw-bold">$2</p>
           <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn">Comprar</button>
+          <button class="btn btn-success btn-sm buy-btn" 
+                  onclick="comprarProducto('Caja', 2, 'club-cerveza-club-twist-off-pack-24-x-330-ml.jpg')">Comprar</button>
         </div>
       </div>
 
-      <!-- Producto 2 -->
       <div class="card producto">
-        <img src="java de club.jpeg" class="card-img-top" alt="BOTELLA DE CLUB PEQUEÑA">
+        <a href="g.html" onclick="guardarProducto('Botella de Club Pequeña', 19, 'java de club.jpeg')">
+          <img src="java de club.jpeg" alt="BOTELLA DE CLUB PEQUEÑA" />
+        </a>
         <div class="card-body text-center">
-          <h6 class="card-title">BOTELLA DE CLUB PEQUEÑA</h6>
+          <h6 class="card-title">Botella de Club Pequeña</h6>
           <p class="text-success fw-bold">$19</p>
           <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn">Comprar</button>
+          <button class="btn btn-success btn-sm buy-btn" 
+                  onclick="comprarProducto('Botella de Club Pequeña', 19, 'java de club.jpeg')">Comprar</button>
+        </div>
+      </div>
+
+      <div class="card producto">
+        <a href="g.html" onclick="guardarProducto('Soprano', 2, 'soprano.jpg')">
+          <img src="soprano.jpg" alt="Soprano" />
+        </a>
+        <div class="card-body text-center">
+          <h6 class="card-title">Soprano</h6>
+          <p class="text-success fw-bold">$2</p>
+          <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
+          <button class="btn btn-success btn-sm buy-btn" 
+                  onclick="comprarProducto('Soprano', 2, 'soprano.jpg')">Comprar</button>
+        </div>
+      </div>
+
+      <div class="card producto">
+        <a href="g.html" onclick="guardarProducto('Botella de Club Pequeña', 19, 'java de club.jpeg')">
+          <img src="java de club.jpeg" alt="BOTELLA DE CLUB PEQUEÑA" />
+        </a>
+        <div class="card-body text-center">
+          <h6 class="card-title">Botella de Club Pequeña</h6>
+          <p class="text-success fw-bold">$19</p>
+          <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
+          <button class="btn btn-success btn-sm buy-btn" 
+                  onclick="comprarProducto('Botella de Club Pequeña', 19, 'java de club.jpeg')">Comprar</button>
         </div>
       </div>
 
     </div>
   </div>
 
-  <div class="scroll-horizontal" id="contenedor-productos">
-
-      <!-- Producto 1 -->
-      <div class="card producto">
-        <img src="soprano.jpg" class="card-img-top" alt="JAVA DE CLUB VERDE">
-        <div class="card-body text-center">
-          <h6 class="card-title">soprano</h6>
-          <p class="text-success fw-bold">$2</p>
-          <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn">Comprar</button>
-        </div>
-      </div>
-
-      <!-- Producto 2 -->
-      <div class="card producto">
-        <img src="java de club.jpeg" class="card-img-top" alt="BOTELLA DE CLUB PEQUEÑA">
-        <div class="card-body text-center">
-          <h6 class="card-title">BOTELLA DE CLUB PEQUEÑA</h6>
-          <p class="text-success fw-bold">$19</p>
-          <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn">Comprar</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="scroll-horizontal" id="contenedor-productos">
-
-      <!-- Producto 1 -->
-      <div class="card producto">
-        <img src="club-cerveza-club-twist-off-pack-24-x-330-ml.jpg" class="card-img-top" alt="JAVA DE CLUB VERDE">
-        <div class="card-body text-center">
-          <h6 class="card-title">caja</h6>
-          <p class="text-success fw-bold">$2</p>
-          <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn">Comprar</button>
-        </div>
-      </div>
-
-      <!-- Producto 2 -->
-      <div class="card producto">
-        <img src="java de club.jpeg" class="card-img-top" alt="BOTELLA DE CLUB PEQUEÑA">
-        <div class="card-body text-center">
-          <h6 class="card-title">BOTELLA DE CLUB PEQUEÑA</h6>
-          <p class="text-success fw-bold">$19</p>
-          <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn">Comprar</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- Barra inferior -->
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item">
       <i class="fas fa-home fa-lg"></i>
@@ -227,41 +168,22 @@
     </a>
   </nav>
 
-  <!-- Scripts -->
   <script>
-    // Mostrar cantidad en el carrito
+    // Guardar producto seleccionado en localStorage (solo el producto)
+    function guardarProducto(nombre, precio, imagen) {
+      const producto = { nombre, precio, imagen };
+      localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
+    }
+
+    // Función para comprar producto desde botón comprar: guarda y redirige
+    function comprarProducto(nombre, precio, imagen) {
+      guardarProducto(nombre, precio, imagen);
+      window.location.href = "g.html";
+    }
+
+    // Mostrar contador carrito
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     document.getElementById("contador-carrito").textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-
-    // Agregar productos al carrito
-    document.querySelectorAll(".buy-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const card = btn.closest(".card");
-        const name = card.querySelector(".card-title").textContent.trim();
-        const price = parseFloat(card.querySelector("p").textContent.replace("$", ""));
-        const image = card.querySelector("img").getAttribute("src");
-        const quantity = parseInt(card.querySelector("input").value);
-
-        if (isNaN(quantity) || quantity < 1) {
-          alert("Cantidad inválida");
-          return;
-        }
-
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-        const existing = carrito.find(item => item.nombre === name);
-
-        if (existing) {
-          existing.cantidad += quantity;
-        } else {
-          carrito.push({ nombre: name, precio: price, cantidad: quantity, imagen: image });
-        }
-
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-
-        // Actualizar contador
-        document.getElementById("contador-carrito").textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-      });
-    });
 
     // Filtrar productos por búsqueda
     document.getElementById("busqueda").addEventListener("input", function () {
@@ -272,5 +194,7 @@
       });
     });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
