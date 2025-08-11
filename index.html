@@ -102,54 +102,50 @@
     <div class="productos-grid" id="contenedor-productos">
 
       <div class="card producto">
-        <a href="g.html" onclick="guardarProducto('Caja', 2, 'club-cerveza-club-twist-off-pack-24-x-330-ml.jpg')">
-          <img src="club-cerveza-club-twist-off-pack-24-x-330-ml.jpg" alt="JAVA DE CLUB VERDE" />
+        <a href="g.html" onclick="guardarProductoDesdeCard(this)">
+          <img src="data:image/jpeg;base64,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" alt="JAVA DE CLUB VERDE" />
         </a>
         <div class="card-body text-center">
-          <h6 class="card-title">Caja</h6>
-          <p class="text-success fw-bold">$2</p>
+          <h6 class="card-title">Caj</h6>
+          <p class="text-success fw-bold">$8.00</p>
           <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn" 
-                  onclick="comprarProducto('Caja', 2, 'club-cerveza-club-twist-off-pack-24-x-330-ml.jpg')">Comprar</button>
+          <button class="btn btn-success btn-sm buy-btn" onclick="comprarProductoDesdeCard(this)">Comprar</button>
         </div>
       </div>
 
       <div class="card producto">
-        <a href="g.html" onclick="guardarProducto('Botella de Club Pequeña', 19, 'java de club.jpeg')">
+        <a href="g.html" onclick="guardarProductoDesdeCard(this)">
           <img src="java de club.jpeg" alt="BOTELLA DE CLUB PEQUEÑA" />
         </a>
         <div class="card-body text-center">
           <h6 class="card-title">Botella de Club Pequeña</h6>
-          <p class="text-success fw-bold">$19</p>
+          <p class="text-success fw-bold">$19.00</p>
           <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn" 
-                  onclick="comprarProducto('Botella de Club Pequeña', 19, 'java de club.jpeg')">Comprar</button>
+          <button class="btn btn-success btn-sm buy-btn" onclick="comprarProductoDesdeCard(this)">Comprar</button>
         </div>
       </div>
 
       <div class="card producto">
-        <a href="g.html" onclick="guardarProducto('Soprano', 2, 'soprano.jpg')">
+        <a href="g.html" onclick="guardarProductoDesdeCard(this)">
           <img src="soprano.jpg" alt="Soprano" />
         </a>
         <div class="card-body text-center">
           <h6 class="card-title">Soprano</h6>
-          <p class="text-success fw-bold">$2</p>
+          <p class="text-success fw-bold">$2.00</p>
           <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn" 
-                  onclick="comprarProducto('Soprano', 2, 'soprano.jpg')">Comprar</button>
+          <button class="btn btn-success btn-sm buy-btn" onclick="comprarProductoDesdeCard(this)">Comprar</button>
         </div>
       </div>
 
       <div class="card producto">
-        <a href="g.html" onclick="guardarProducto('Botella de Club Pequeña', 19, 'java de club.jpeg')">
+        <a href="g.html" onclick="guardarProductoDesdeCard(this)">
           <img src="java de club.jpeg" alt="BOTELLA DE CLUB PEQUEÑA" />
         </a>
         <div class="card-body text-center">
           <h6 class="card-title">Botella de Club Pequeña</h6>
-          <p class="text-success fw-bold">$19</p>
+          <p class="text-success fw-bold">$19.00</p>
           <input type="number" value="1" min="1" class="form-control form-control-sm mb-2" />
-          <button class="btn btn-success btn-sm buy-btn" 
-                  onclick="comprarProducto('Botella de Club Pequeña', 19, 'java de club.jpeg')">Comprar</button>
+          <button class="btn btn-success btn-sm buy-btn" onclick="comprarProductoDesdeCard(this)">Comprar</button>
         </div>
       </div>
 
@@ -169,23 +165,29 @@
   </nav>
 
   <script>
-    // Guardar producto seleccionado en localStorage (solo el producto)
-    function guardarProducto(nombre, precio, imagen) {
+    // Guardar producto seleccionado leyendo el card completo
+    function guardarProductoDesdeCard(elemento) {
+      const card = elemento.closest('.producto');
+      const nombre = card.querySelector('.card-title').textContent.trim();
+      const precioTexto = card.querySelector('.text-success').textContent.trim();
+      const precio = parseFloat(precioTexto.replace('$', ''));
+      const imagen = card.querySelector('img').src;
+
       const producto = { nombre, precio, imagen };
       localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
     }
 
-    // Función para comprar producto desde botón comprar: guarda y redirige
-    function comprarProducto(nombre, precio, imagen) {
-      guardarProducto(nombre, precio, imagen);
-      window.location.href = "g.html";
+    // Comprar producto: guardar y redirigir
+    function comprarProductoDesdeCard(boton) {
+      guardarProductoDesdeCard(boton);
+      window.location.href = 'g.html';
     }
 
     // Mostrar contador carrito
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     document.getElementById("contador-carrito").textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
 
-    // Filtrar productos por búsqueda
+    // Filtrar productos con búsqueda
     document.getElementById("busqueda").addEventListener("input", function () {
       const filtro = this.value.toLowerCase();
       document.querySelectorAll(".producto").forEach(card => {
@@ -198,3 +200,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
